@@ -1,0 +1,10 @@
+1) Link downoad node.js: https://nodejs.org/en/download/
+
+2) VSCode: Instalar extensão para fazer ponte entre código e o Node
+Code runner
+
+3) Repositório cursno no GitHub:
+
+https://github.com/luizomf/curso-js
+
+4)
