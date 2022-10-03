@@ -28,5 +28,3 @@ const num2 = parseInt('2'); // Converte tipos. parseFloat etc
 const num3 = parseFloat('3.2'); //
 const num4 = Number('4.5'); //
 console.log(num1 + num2);
-
-
