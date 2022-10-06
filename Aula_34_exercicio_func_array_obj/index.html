@@ -12,23 +12,23 @@
     <h1>Formulário</h1>
     <fieldset>
       <legend>Dados pessoais</legend>
-      <form action="/assets/index.js" method="get" class="form">
+      <form action="" method="get" class="form">
         <div>
           <div>
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome">
+            <input type="text" name="nome" id="nome" class="nome">
           </div>
           <div>
             <label for="sobrenome">Sobrenome:</label>
-            <input type="text" name="sobrenome" id="sobrenome">
+            <input type="text" name="sobrenome" id="sobrenome" class="sobrenome">
           </div>
           <div>
             <label for="peso">Peso:</label>
-            <input type="text" name="peso" id="peso" pattern="/^\d*\,?\d*$/">
+            <input type="text" name="peso" id="peso" pattern="[0-9]*[,]{0,1}[0-9]*" class="peso">
           </div>
           <div>
             <label for="altura">Altura:</label>
-            <input type="text" name="altura" id="altura" pattern="/^\d*\,?\d*$/">
+            <input type="text" name="altura" id="altura" pattern="[0-9]*[,]{0,1}[0-9]*" class="altura">
           </div>
           <div>
             <button>Enviar</button>
@@ -37,6 +37,9 @@
       </form>
     </fieldset>
   </div>
-  <script src="/assets/index.js"></script>
+  <div class="result">
+    
+  </div>
+  <script src="assets/index.js"></script>
 </body>
 </html>
