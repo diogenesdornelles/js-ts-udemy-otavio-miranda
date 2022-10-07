@@ -12,7 +12,8 @@ function meuEscopo () {
     const peso = form.querySelector('.peso'); 
     const altura = form.querySelector('.altura'); 
 
-    resultado.innerHTML += `<p> Nome: ${nome.value} Sobrenome: ${sobrenome.value} Peso: ${peso.value} Altura: ${altura.value}</p>`;
+    resultado.innerHTML += `<p> Nome:   ${nome.value} Sobrenome:   ${sobrenome.value} Peso:   ${peso.value} Altura:   ${altura.value}</p><hr>`
+    ;
     
     const dadosPessoas = {
       nome: nome.value, 
@@ -24,6 +25,8 @@ function meuEscopo () {
     pessoas.push(dadosPessoas);
 
     console.log(pessoas);
+
+    document.alert('Cadastro efetuado com sucesso');
   }
 
   form.addEventListener('submit', onSubmit);  // Primeiro parâmetro 'tipo de evento' a ser ouvido e segundo 'função callbak a ser chamada';

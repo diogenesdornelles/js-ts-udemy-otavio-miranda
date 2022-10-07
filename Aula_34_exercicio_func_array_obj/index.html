@@ -8,38 +8,44 @@
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Formulário</h1>
-    <fieldset>
-      <legend>Dados pessoais</legend>
-      <form action="" method="get" class="form">
-        <div>
+  <div class="container-all">
+    <div class="container">
+      <h1>Formulário</h1>
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <form action="" method="get" class="form">
           <div>
-            <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" class="nome">
+            <div>
+              <label for="nome">Nome:</label>
+              <input type="text" name="nome" id="nome" class="nome">
+            </div>
+            <div>
+              <label for="sobrenome">Sobrenome:</label>
+              <input type="text" name="sobrenome" id="sobrenome" class="sobrenome">
+            </div>
+            <div>
+              <label for="peso">Peso:</label>
+              <input type="text" name="peso" id="peso" pattern="[0-9]*[,]{0,1}[0-9]*" class="peso">
+            </div>
+            <div>
+              <label for="altura">Altura:</label>
+              <input type="text" name="altura" id="altura" pattern="[0-9]*[,]{0,1}[0-9]*" class="altura">
+            </div>
+            <div>
+              <button>Enviar</button>
+            </div>
           </div>
-          <div>
-            <label for="sobrenome">Sobrenome:</label>
-            <input type="text" name="sobrenome" id="sobrenome" class="sobrenome">
-          </div>
-          <div>
-            <label for="peso">Peso:</label>
-            <input type="text" name="peso" id="peso" pattern="[0-9]*[,]{0,1}[0-9]*" class="peso">
-          </div>
-          <div>
-            <label for="altura">Altura:</label>
-            <input type="text" name="altura" id="altura" pattern="[0-9]*[,]{0,1}[0-9]*" class="altura">
-          </div>
-          <div>
-            <button>Enviar</button>
-          </div>
-        </div>
-      </form>
-    </fieldset>
-  </div>
-  <div class="result">
+        </form>
+      </fieldset>
+    </div>
     
+    <div class="result">
+      <h2>Pessoas cadastradas</h2>
+      
+    </div>
+     
   </div>
+  
   <script src="assets/index.js"></script>
 </body>
 </html>
