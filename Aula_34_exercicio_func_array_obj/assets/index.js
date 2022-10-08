@@ -12,25 +12,31 @@ function meuEscopo () {
     const peso = form.querySelector('.peso'); 
     const altura = form.querySelector('.altura'); 
 
-    resultado.innerHTML += `<p> Nome:   ${nome.value} Sobrenome:   ${sobrenome.value} Peso:   ${peso.value} Altura:   ${altura.value}</p><hr>`
-    ;
-    
-    const dadosPessoas = {
-      nome: nome.value, 
-      sobrenome: sobrenome.value,
-      peso: peso.value,
-      altura: altura.value,
+    const checked = nome.value !== "" && sobrenome.value !== "" && peso.value !== "" && altura.value !== "";
+
+      if (checked === true) {
+
+      resultado.innerHTML += `<p> Nome:   ${nome.value} Sobrenome:   ${sobrenome.value} Peso:   ${peso.value} Altura:   ${altura.value}</p><hr>`
+      ;
+      
+      const dadosPessoas = {
+        nome: nome.value, 
+        sobrenome: sobrenome.value,
+        peso: peso.value,
+        altura: altura.value,
+      }
+
+      pessoas.push(dadosPessoas);
+
+      console.log(pessoas);
+
+      document.alert('Cadastro efetuado com sucesso');
+    } else { 
+      document.alert('Dados completos devem ser fornecidos');
     }
-
-    pessoas.push(dadosPessoas);
-
-    console.log(pessoas);
-
-    document.alert('Cadastro efetuado com sucesso');
   }
 
   form.addEventListener('submit', onSubmit);  // Primeiro parâmetro 'tipo de evento' a ser ouvido e segundo 'função callbak a ser chamada';
-
 }
 
 meuEscopo();

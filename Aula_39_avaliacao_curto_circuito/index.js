@@ -20,7 +20,8 @@
  * Se nonetype, null ou undefined
  * .*/
 
-console.log('Ola' && 0 && NaN && true); // retorna 0.
+
+console.log('Ola' && "" && NaN && true); // retorna 0.
 
 
 // Avaliação em curto circuito com o operador AND

@@ -121,7 +121,6 @@ fieldset legend {
   grid-template-columns: 1fr;
   width: 35vmax;
   background-color: rgb(235, 231, 231);
-  border: 1px solid black;
   border-radius: 5px;
   height: 5%;
   padding: 10px;
@@ -133,8 +132,9 @@ fieldset legend {
   background-color: rgb(228, 209, 209);
   border-radius: 10px;
   margin-bottom: 10px;
+  border: 2px solid rgb(138, 120, 120);
 }
-
+ 
 .result p {
   padding: 10px;
 }
