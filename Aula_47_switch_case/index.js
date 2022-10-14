@@ -22,7 +22,7 @@ function getDiaSemanaTexto (data) {
       diaSemanaTexto = "Sexta-Feira";   
       return diaSemanaTexto;     
     case 6:
-      diaSemanaTexto = "Sábado-Feira";
+      diaSemanaTexto = "Sábado";
       return diaSemanaTexto;
     default:
       diaSemanaTexto = '';

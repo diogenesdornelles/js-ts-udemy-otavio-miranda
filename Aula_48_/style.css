@@ -1,0 +1,18 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  background-color: rgb(19, 107, 41);
+  color: white
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  background: rgb(187, 25, 25);
+}
