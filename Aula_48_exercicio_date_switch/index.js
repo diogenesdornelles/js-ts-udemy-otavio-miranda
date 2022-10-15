@@ -1,4 +1,5 @@
-/*
+/* 
+-------- 1ª FORMA ----------------------------------------------------------------
 function getDiaSemana() {
   let diaSemanaTexto;
   switch (new Date().getDay()) {
@@ -76,19 +77,21 @@ function setTime() {
 
   const h1 = document.querySelector('h1');
 
+  const data = new Date();
+
   const diaSemanaTexto = getDiaSemana();
 
   const mes = getMes();
   
-  const date = new Date().getDate();
+  const date = data.getDate();
 
-  const ano = new Date().getFullYear();
+  const ano = data.getFullYear();
 
-  const hora = zeroEsquerda(new Date().getHours());
+  const hora = zeroEsquerda(data.getHours());
 
-  const minuto = zeroEsquerda(new Date().getMinutes());
+  const minuto = zeroEsquerda(data.getMinutes());
 
-  const segundo = zeroEsquerda(new Date().getSeconds());
+  const segundo = zeroEsquerda(data.getSeconds());
 
   h1.innerText = `${diaSemanaTexto}, ${date} de ${mes} de ${ano}, ${hora}:${minuto}:${segundo}`;
 
@@ -96,6 +99,49 @@ function setTime() {
 
 function zeroEsquerda (number) {
   return `${number}`.length === 1 ? `0${number}` : `${number}`;
+}
+
+setTime();
+
+-------- 2ª FORMA ----------------------------------------------------------------
+
+
+function getDiaSemanaTexto(diaSemana) {
+  const diasSemana = ['domingo', 'segunda, 'terça', 'quarta', 'quinta', 'sexta', 'sábado', 'domingo'];
+  return diasSemana[diaSemana];
+}
+
+function getNomeMes(numeroMes) {
+  const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro, 'novembro', 'dezembro'];
+  return meses[numeroMes];
+}
+
+function zeroEsquerda (number) {
+  return `${number}`.length === 1 ? `0${number}` : `${number}`;
+}
+
+function setTime() {
+
+  const h1 = document.querySelector('h1');
+
+  const data = new Date();
+
+  const diaSemanaTexto = getDiaSemanaTexto(data.getDay());
+
+  const mes = getNomeMes(data.getMonth());
+  
+  const date = data.getDate();
+
+  const ano = data.getFullYear();
+
+  const hora = zeroEsquerda(data.getHours());
+
+  const minuto = zeroEsquerda(data.getMinutes());
+
+  const segundo = zeroEsquerda(data.getSeconds());
+
+  h1.innerText = `${diaSemanaTexto}, ${date} de ${mes} de ${ano}, ${hora}:${minuto}:${segundo}`;
+
 }
 
 setTime();
@@ -117,7 +163,7 @@ function setTime() {
   };
 
   h1.innerText = data.toLocaleDateString('pt-BR', option);
-  console.log(h1)
+
 }
 
 setTime();
