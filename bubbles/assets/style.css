@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --size-bubble: 80px;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1a1b1a;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #666663;
+  font-weight: 600;
+}
+
+
+.bubble-container {
+  width: var(--size-bubble);
+  height: var(--size-bubble);
+  border-radius: 50%;
+  position: absolute;
+  background: #276873;
+  transition: all 1s ease-in-out;
+  cursor: pointer;
+}
+
+#new-bubble {
+	box-shadow:inset 3px 24px 14px -6px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:16px 49px;
+	text-decoration:none;
+	text-shadow:0px 3px 24px #3d768a;
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-20%, -50%);
+}
+#new-bubble:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+#new-bubble:active {
+	background-color:#22606b;
+}
