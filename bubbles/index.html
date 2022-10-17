@@ -8,7 +8,7 @@
   <title>Document</title>
 </head>
 <body>
-  <form action="" method="get" class="form">
+  <form action="" method="get" class="form" id="my-form">
     <div>
       <label for="color-bubble">Cor</label>
       <input type="color" name="color-bubble" id="color-bubble">
@@ -17,8 +17,18 @@
       <label for="bubble-size">Size</label>
       <input type="range" name="bubble-size" id="bubble-size" min="10" max="200" step="10">
     </div>
+    <div>
+      <label for="bubble-size">Velocity</label>
+      <input type="number" name="number" id="velocity" min="1" value="4" max="10" step="1">
+    </div>
     <button type="button" onclick="startNewBubble()" id="new-bubble"> New bubble</button>
+    <div class="score">
+      <h3>Number of bubbles:</h3>
+      <p>0</p>
+    </div>
   </form>
-  <script src="./assets/index.js"></script>
+  <script src="./assets/anime/anime.min.js"></script>
+  <script src="./assets/index.js"></script> 
+  <script src="./assets/drag.js"></script>
 </body>
-</html>
+</html> 

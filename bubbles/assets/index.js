@@ -5,7 +5,7 @@ function onSubmitForm(event) {
 function startNewBubble() {
   const form = document.querySelector('.form');
   form.addEventListener('submit', onSubmitForm);
-  makeNewBubble();
+  setNewBubble();
 }
 
 const body = document.querySelector('body');
@@ -28,12 +28,17 @@ function getBubbleSize() {
   return size; 
 }
 
+function getBubbleVelocity() {
+  const velocity = Number(document.querySelector('#velocity').value); 
+  return Number(velocity ); 
+}
+
 function getColor() {
   const color = document.getElementById('color-bubble').value;
   return color;
 }
 
-function generateRandomIntegerInRangeSizeBody(min, max) {
+function generateRandomIntegerInRange(min, max) {
   const position = Math.floor(Math.random() * (max - min + 1)) + min;
   return position;
 }
@@ -48,26 +53,32 @@ function createClassCssForNewBubble(className, regras) {
 }
 
 class Bubble {
-  constructor(index, classNameCss, size, positionTopInitial, positionLeftInitial, color) {
+  constructor(index, classNameCss, size, positionTopInitial, positionLeftInitial, color, velocity, isActive=true) {
       this.index = index;
       this.classNameCss = classNameCss;
       this.size = size;
       this.positionTopInitial = positionTopInitial;
       this.positionLeftInitial = positionLeftInitial;
       this.color = color;
+      this.velocity = velocity;
+      this.isActive = isActive;
   }
 }
 
-function manipulateBubbleOnHtml (bubble) {
-  const newBubble = document.createElement('div');
-  newBubble.classList.add("bubble-container");
-  newBubble.classList.add(`bubble-container-${bubble.index}`);
-  newBubble.addEventListener('click', function(event) {
-  body.removeChild(event.target);
-  removeRepoBubble(bubble);
-  })
-  body.appendChild(newBubble);
-  breathBubble(newBubble);
+function createBubbleOnHtml (bubbleObj) {
+  const elementNewBubble = document.createElement('div');
+  elementNewBubble.classList.add("bubble-container");
+  elementNewBubble.classList.add(`bubble-container-${bubbleObj.index}`);
+  body.appendChild(elementNewBubble);
+  breathBubble(elementNewBubble);
+  moveBubbles(elementNewBubble, bubbleObj);
+  elementNewBubble.addEventListener('click', function(event) {
+    body.removeChild(event.target);
+    removeRepoBubble(bubbleObj);
+    });
+  elementNewBubble.addEventListener('mouseover', function() {
+    animateTouch(elementNewBubble);
+    });
 }
 
 function factoryBubble() {
@@ -79,15 +90,17 @@ function factoryBubble() {
                             width: bubbleSize,
                             height: bubbleSize,
                           },
-                          generateRandomIntegerInRangeSizeBody(0, bodySize[1] - bubbleSize),
-                          generateRandomIntegerInRangeSizeBody(0, bodySize[0] - bubbleSize),
+                          positionTopInitial = generateRandomIntegerInRange(0, bodySize[1] - bubbleSize),
+                          positionLeftInitial = generateRandomIntegerInRange(0, bodySize[0] - bubbleSize),
                           color = getColor(), 
+                          velocity = getBubbleVelocity(),
                           );
   return bubble;
 }
  
 function addRepoBubble(bubble) {
   repo.push(bubble);
+  updateScore(repo.length);
 }
 
 function removeRepoBubble(bubble) {
@@ -95,10 +108,24 @@ function removeRepoBubble(bubble) {
   if (indexBubble > -1) { 
     repo.splice(indexBubble, 1);
   }
+  updateScore(repo.length);
+}
+
+function updateScore(numberBubbles) {
+  const score = document.querySelector('.score p');
+  score.innerHTML = numberBubbles;
+}
+
+function setBubbleAtualPosition(bubble) {
+  let rect = document.querySelector(`.bubble-container-${bubble.index}`).getBoundingClientRect();
+  bubble.atualPositionTop = rect.top;
+  bubble.atualPositionLeft = rect.left;
+  bubble.atualPositionRight = rect.right;
+  bubble.atualPositionBotton = rect.bottom;
 }
 
 
-function makeNewBubble() { 
+function setNewBubble() { 
   cont += 1;
   const bubble = factoryBubble();
   createClassCssForNewBubble(`.bubble-container-${bubble.index}`, 
@@ -112,9 +139,9 @@ function makeNewBubble() {
                    opacity: .7;
                    filter: blur(1);
                   `);
-  manipulateBubbleOnHtml(bubble);
+  createBubbleOnHtml(bubble);
+  setBubbleAtualPosition(bubble);
   addRepoBubble(bubble);
-  // takePosition(bubble);
 }
 
 const grouthBubble = [
@@ -126,10 +153,55 @@ const grouthBubble = [
 
 const grouthBubbleTiming = {
   duration: 2000,
-  iterations: 100000,
+  iterations: Infinity,
   transition: 'all ease-in-out', 
 }
 
 function breathBubble(bubble) {
   bubble.animate(grouthBubble, grouthBubbleTiming)
 }
+
+function animateTouch(bubble) {
+  let shakeBubble;
+  let shakeBubbleTiming;
+  bubble.animate(shakeBubble = [
+    { transform: 'scale(1)'},
+    { transform: 'scaleX(1.3)'},
+    { transform: 'scaleY(1.3)'},
+    { transform: 'scale(1)'},
+    { transform: 'scaleX(1.2)'},
+    { transform: 'scaleY(1.2)'},
+    { transform: 'scale(1)'},
+    { transform: 'scaleX(1.1)'},
+    { transform: 'scaleY(1.1)'},
+    { transform: 'scale(1)'},
+  ], 
+    shakeBubbleTiming = {
+      duration: 1000,
+      iterations: 1,
+      ease: 'cubicBezier(.5, .05, .1, .3)', 
+    })
+}
+
+function moveBubbles(elementNewBubble, bubbleObj) {
+  let moveBubble;
+  let moveBubbleTiming;
+  let integerX;
+  let integerY;
+  console.log(bubbleObj.velocity)
+  elementNewBubble.animate(moveBubble = [
+    { transform: 'translate(0)'},
+    { transform: `translate(${integerX = generateRandomIntegerInRange(0, bodySize[0] - bubbleObj.size.width)}px, ${integerY = generateRandomIntegerInRange(0, bodySize[1] - bubbleObj.size.height)}px)`},
+    { transform: 'translate(0)'},
+    { transform: `translate(${integerX = generateRandomIntegerInRange(0, bodySize[0] - bubbleObj.size.width)}px, ${integerY = generateRandomIntegerInRange(0, bodySize[1] - bubbleObj.size.height)}px)`},
+    { transform: 'translate(0)'},
+    { transform: `translate(${integerX = generateRandomIntegerInRange(0, bodySize[0] - bubbleObj.size.width)}px, ${integerY = generateRandomIntegerInRange(0, bodySize[1] - bubbleObj.size.height)}px)`},
+    { transform: 'translate(0)'},
+    { transform: `translate(${integerX = generateRandomIntegerInRange(0, bodySize[0] - bubbleObj.size.width)}px, ${integerY = generateRandomIntegerInRange(0, bodySize[1] - bubbleObj.size.height)}px)`},
+  ] , moveBubbleTiming = {
+      duration: Math.trunc(30000 / bubbleObj.velocity),
+      iterations: Infinity,
+      ease: 'cubicBezier(.5, .05, .1, .3)', 
+  });
+} 
+
