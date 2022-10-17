@@ -9,7 +9,15 @@
 </head>
 <body>
   <form action="" method="get" class="form">
-    <button type="button" onclick="newBubble()" id="new-bubble"> New bubble</button>
+    <div>
+      <label for="color-bubble">Cor</label>
+      <input type="color" name="color-bubble" id="color-bubble">
+    </div>
+    <div>
+      <label for="bubble-size">Size</label>
+      <input type="range" name="bubble-size" id="bubble-size" min="10" max="200" step="10">
+    </div>
+    <button type="button" onclick="startNewBubble()" id="new-bubble"> New bubble</button>
   </form>
   <script src="./assets/index.js"></script>
 </body>

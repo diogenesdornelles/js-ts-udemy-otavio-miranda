@@ -4,28 +4,42 @@
   box-sizing: border-box;
 }
 
-:root {
-  --size-bubble: 80px;
-}
-
 html, body {
   width: 100vw;
   height: 100vh;
-  background-color: #1a1b1a;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #666663;
   font-weight: 600;
+  background-color: #FAFFF0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23c1ffc3'/%3E%3Cstop offset='1' stop-color='%23c1ffc3' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2393ffe4'/%3E%3Cstop offset='1' stop-color='%2393ffe4' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2363b7ff'/%3E%3Cstop offset='1' stop-color='%2363b7ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FAFFF0'/%3E%3Cstop offset='1' stop-color='%23FAFFF0' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2391FFE4'/%3E%3Cstop offset='1' stop-color='%2391FFE4' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%235835FF'/%3E%3Cstop offset='1' stop-color='%235835FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 
 .bubble-container {
-  width: var(--size-bubble);
-  height: var(--size-bubble);
   border-radius: 50%;
   position: absolute;
   background: #276873;
   transition: all 1s ease-in-out;
   cursor: pointer;
+}
+
+.form {
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-20%, -50%);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+}
+
+.form div {
+  display: flex;
+  gap: 10%;
+  align-items: flex-end;
 }
 
 #new-bubble {
@@ -42,11 +56,8 @@ html, body {
 	padding:16px 49px;
 	text-decoration:none;
 	text-shadow:0px 3px 24px #3d768a;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-20%, -50%);
 }
+
 #new-bubble:hover {
 	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
 	background-color:#408c99;
