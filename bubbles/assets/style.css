@@ -4,19 +4,17 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
-
 html, body {
   width: 100vw;
   height: 100vh;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   color: #666663;
   font-weight: 600;
-  background-color: #FAFFF0;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23c1ffc3'/%3E%3Cstop offset='1' stop-color='%23c1ffc3' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2393ffe4'/%3E%3Cstop offset='1' stop-color='%2393ffe4' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2363b7ff'/%3E%3Cstop offset='1' stop-color='%2363b7ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FAFFF0'/%3E%3Cstop offset='1' stop-color='%23FAFFF0' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%2391FFE4'/%3E%3Cstop offset='1' stop-color='%2391FFE4' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%235835FF'/%3E%3Cstop offset='1' stop-color='%235835FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
   background-attachment: fixed;
   background-size: cover;
   overflow: hidden;
+  font-family: 'Orbitron', sans-serif;
 }
 
 
@@ -26,7 +24,7 @@ html, body {
   background: #276873;
   transition: all 1s ease-in-out;
   cursor: pointer;
-  resize: both;
+  backdrop-filter: blur(.6);
 }
 
 .form {
@@ -42,14 +40,8 @@ html, body {
   padding: 20px;
   border-radius: 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  filter: blur(.6);
-  cursor: grab;
+  backdrop-filter: blur(.6);
 }
-
-.form:active {
-  cursor: grabbing;
-}
-
 
 .form div {
   display: flex;
@@ -71,6 +63,7 @@ html, body {
 	padding: 8px 49px;
 	text-decoration:none;
 	text-shadow:0px 3px 24px #3d768a;
+  
 }
 
 #new-bubble:hover {
@@ -97,8 +90,32 @@ html, body {
   font-family: 'Orbitron', sans-serif;
   font-size: 35px;
   text-align: center;
-  color: red;
+  color: #5d3cfe;
   opacity: 0.8;
   margin-top: 15px;
 }
 
+#velocity {
+  border: none;
+  height: 2em;
+  width: 50%;
+  border-radius: 3px;
+  text-align: center;
+}
+
+#velocity:hover {
+  border: 1px solid rgb(19, 18, 18, 0.5);
+}
+
+#velocity:focus {
+  background-color: aliceblue;
+  height: 2.2em;
+}
+
+#my-form-header {
+  cursor: grab;
+}
+
+#my-form-header:active  {
+  cursor: grabbing;
+}

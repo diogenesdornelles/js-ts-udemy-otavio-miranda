@@ -7,4 +7,8 @@ Code runner
 
 https://github.com/luizomf/curso-js
 
-4)
+4) anime.js
+// https://www.youtube.com/watch?v=uRDLFXxihgc
+// https://animejs.com/documentation/#customEasing
+// https://github.com/juliangarnier/anime/
+// https://www.youtube.com/watch?v=PkM7DvYPl4o

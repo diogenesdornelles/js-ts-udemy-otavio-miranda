@@ -198,10 +198,10 @@ function moveBubbles(elementNewBubble, bubbleObj) {
     { transform: `translate(${integerX = generateRandomIntegerInRange(0, bodySize[0] - bubbleObj.size.width)}px, ${integerY = generateRandomIntegerInRange(0, bodySize[1] - bubbleObj.size.height)}px)`},
     { transform: 'translate(0)'},
     { transform: `translate(${integerX = generateRandomIntegerInRange(0, bodySize[0] - bubbleObj.size.width)}px, ${integerY = generateRandomIntegerInRange(0, bodySize[1] - bubbleObj.size.height)}px)`},
+    { transform: 'translate(0)'},
   ] , moveBubbleTiming = {
       duration: Math.trunc(30000 / bubbleObj.velocity),
       iterations: Infinity,
       ease: 'cubicBezier(.5, .05, .1, .3)', 
   });
 } 
-

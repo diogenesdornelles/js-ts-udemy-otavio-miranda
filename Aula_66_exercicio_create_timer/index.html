@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/style.css">
+  <title>Timer</title>
+</head>
+<body>
+  <section class="container">
+    <h1>Meu timer</h1>
+    <p id="timer">
+      00:00:00
+    </p>
+    <div class="buttons">
+      <form action="" method="get" class="form">
+        <input type="submit" value="Iniciar" id="iniciar" onclick="setTime('iniciar')">
+        <input type="submit" value="Pausar" id="pausar" onclick="setTime('pausar')">
+        <input type="submit" value="Zerar" id="zerar" onclick="setTime('zerar')">
+      </form>
+    </div>
+  </section>
+  <script src="./assets/index.js"></script>
+</body>
+</html>
