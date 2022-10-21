@@ -30,16 +30,17 @@ html, body {
 
 .container p {
   font-size: 2em;
+  transition: all 0.5s;
 }
 
 .container .buttons {
   display: flex;
-  gap: 20px;
+  padding: 5px;
 }
 
 .container .buttons input {
-  width: 103px;
-  height: 30px;
+  width: 100px;
+  height: 40px;
   cursor: pointer;
   border: none;
   border-radius: 10px;
@@ -47,6 +48,8 @@ html, body {
   filter: hue-rotate(80deg);
   font-size: 18px;
   color: #ffffff;
+  box-sizing: inherit;
+  margin-left: 5px;
 }
 
 .container .buttons input:hover {

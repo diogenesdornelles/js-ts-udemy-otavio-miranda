@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: rgb(23, 23, 27);
+}
+
+.box {
+  background-color: white;
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  border-radius: 50%;
+  z-index: 1;
+  
+}
+
+.center {
+  width: 120px;
+  height: 120px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: gray;
+  z-index: 0;
+}
