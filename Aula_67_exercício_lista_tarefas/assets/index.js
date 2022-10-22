@@ -1,4 +1,5 @@
 const form = document.querySelector('.form'); 
+const table = document.querySelector('.table'); 
 
 function preventSubmit() {
   form.addEventListener('submit', onSubmitForm);
@@ -7,7 +8,6 @@ function preventSubmit() {
   }
 }
 
-const table = document.querySelector('.table'); 
 const inputAdd = document.querySelector('#enviar-tarefa'); 
 inputAdd.addEventListener('click', getTextoTarefa);
 inputAdd.addEventListener('keypress', function(e) {
@@ -53,17 +53,17 @@ function inserTarefaOnHtml(text) {
     const newElement = document.createElement(`${element}`);
       return newElement;
   }
-  attTarefas();
+  attTarefasLocalStorage();
 }
 
 function removerTarefa(event) {
   const inputRemove = event.target; 
   const div = inputRemove.parentNode;
   table.removeChild(div);
-  attTarefas();
+  attTarefasLocalStorage();
 }
 
-function attTarefas() {
+function attTarefasLocalStorage() {
   const tarefas = document.querySelectorAll('.lista-tarefas .table .item p'); 
   const listaTarefas = [];
   for (let tarefa of tarefas) {
@@ -73,7 +73,7 @@ function attTarefas() {
   localStorage.setItem('tarefas', tarefasJSON);
 }
 
-function addTarefasSalvas() {
+function addTarefasSalvasOnLocalStorage() {
   const tarefas = localStorage.getItem('tarefas');
   const listaTarefas = JSON.parse(tarefas);
   for (let tarefa of listaTarefas) {
@@ -82,4 +82,4 @@ function addTarefasSalvas() {
 }
 
 preventSubmit();
-addTarefasSalvas();
+addTarefasSalvasOnLocalStorage();

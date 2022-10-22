@@ -23,7 +23,7 @@ function moveUp() {
 
 function moveDown(){
   let positionY = getPositionY();
-  positionY = positionY + qtnPixelsMove;
+  positionY = positionY + qtnPixelsMove + qtnPixelsMove/2;
   div.style.top = `${positionY}px`;
   deformBollY()
 }
@@ -37,18 +37,19 @@ function moveLeft(){
 
 function moveRight(){
   let positionX = getPositionX();
-  positionX = positionX + qtnPixelsMove;
+  positionX = positionX + qtnPixelsMove + qtnPixelsMove/2;
   div.style.left = `${positionX}px`;
   deformBollX()
 }
 
 function deformBollX(){
-  div.style.transition = 'all ease-in-out';
+  div.style.transition = 'all .05s ease-in-out';
   div.style.transform = `scale(${(1 + qtnPixelsMove/100) * 1}, ${(1 - qtnPixelsMove/100) * 1})`;
+  
 }
 
 function deformBollY(){
-  div.style.transition = 'all ease-in-out';
+  div.style.transition = 'all .05s ease-in-out';
   div.style.transform = `scale(${(1 - qtnPixelsMove/100) * 1}, ${(1 + qtnPixelsMove/100) * 1})`;
 }
 

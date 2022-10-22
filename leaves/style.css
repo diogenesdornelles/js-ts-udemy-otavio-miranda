@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  color: #25252369;
+  font-weight: 700;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(177, 203, 226);
+  z-index: 0;
+}
+
+.fl {
+  width: 10vw;
+  height: 30vh;
+  position: absolute;
+  top: 20vh;
+  left: 50vw;
+  transform: skewY(-45deg) rotateY(30deg);
+  transition: all .8s ease-in-out;
+  border-radius: 5px;
+  font-size: 5px;
+  cursor: pointer;
+  box-shadow:
+  2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
+  6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
+  12.5px 12.5px 10px rgba(0, 0, 0, 0.035),
+  22.3px 22.3px 17.9px rgba(0, 0, 0, 0.042),
+  41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+;}
+
+.fl-anime {
+  font-size: 1em;
+  width: 25vw;
+  height: 75vh;
+  transform: scale(1) translate(-50%, -50%);
+  top: 5vh;
+  left: 50vw;
+} 
+
+.fl p {
+  padding: 10%;
+  text-align: justify;
+  text-indent: 20px;
+  
+}
+
+.fl1 {
+  z-index: 1;
+  background-color: antiquewhite;
+  transform: skewY(-30deg) rotateY(30deg);
+}
+
+.fl2 {
+  left: 58vw;
+  z-index: 2;
+  background-color: rgb(230, 214, 193);
+  transform: skewY(-30deg) rotateY(15deg);
+}
+
+.fl3 {
+  left: 65vw;
+  z-index: 3;
+  background-color: rgb(180, 162, 138);
+  transform: skewY(-30deg) rotateY(0deg);
+}
+
+.fl:hover {
+  transform: translate(-5vw, 5vh);
+  z-index: 5;
+}

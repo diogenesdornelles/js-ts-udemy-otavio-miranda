@@ -1,12 +1,13 @@
-// 1) Declaração de função ou funções nominadas.
+// 1) Declaração de função ou funções nominadas (Function). As funções são um objeto autônomo.
 // Ocorre o hoisting (JS eleva 'var' e 'function' ao topo do documento, permitindo o chamamentoantes da declaração)).
+// Exemplo: 
 
 sayhi();
 function sayhi() {
   console.log("Oi");
 }
 
-// 2) Function expressions ou funções anônimas.
+// 2) Function expressions ou funções anônimas (Variável recebe uma função como dado).
 // First-class objects (Objetos de primeira classe). Funções podem ser expressas como um dado.
 
 const dado = function() {
