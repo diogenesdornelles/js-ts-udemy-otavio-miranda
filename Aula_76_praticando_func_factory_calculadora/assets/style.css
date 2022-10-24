@@ -24,13 +24,22 @@ html, body {
   text-align: center;
 }
 
-.container p{
+.container .leitor {
   border: 1px solid #005663;
   height: 30px;
-  width: 10vw;
+  min-width: 15vw;
+  width: fit-content;
   border-radius: 4px;
   background-color:#dddcdcdc;
+  text-align: right;
+  text-indent: 7px;
 }
+
+.container .leitor p {
+  padding: 0 5px 0 5px;
+  line-height: 30px;
+}
+
 
 .container .buttons {
   display: grid;
