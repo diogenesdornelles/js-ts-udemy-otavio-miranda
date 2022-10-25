@@ -1,3 +1,6 @@
+// Função fábrica -> Fabrica um objeto.
+// https://medium.com/@viniazvd/classes-vs-fun%C3%A7%C3%B5es-construtoras-vs-fun%C3%A7%C3%B5es-f%C3%A1brica-b92a6afa70a4
+
 // SOLUÇÃO 1
 /** 
 (function (){
@@ -54,7 +57,7 @@
   function painelError(){
     painel.innerHTML = 'Not valid input';
   }
-})//()
+})()
 */
 
 // SOLUÇÃO 2 - Factory function.

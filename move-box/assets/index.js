@@ -55,19 +55,19 @@ function deformBollY(){
 
 function checkKey(event) {
   event = event || window.event;
-  if (event.keyCode == upKey) {
+  if (event.keyCode === upKey) {
     console.log(event)
       moveUp()
   }
-  else if (event.keyCode == downKey) {
+  else if (event.keyCode === downKey) {
     console.log(event)
       moveDown()
   }
-  else if (event.keyCode == leftKey) {
+  else if (event.keyCode === leftKey) {
     console.log(event)
       moveLeft()
   }
-  else if (event.keyCode == rightKey) {
+  else if (event.keyCode === rightKey) {
     console.log(event)
       moveRight()
   }
