@@ -4,18 +4,14 @@
   box-sizing: border-box;
 }
 
-html, body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #25252369;
-  font-weight: 700;
+#txt-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
-.main {
-  width: 100vw;
-  height: 100vh;
-  background-color: rgb(177, 203, 226);
-  z-index: 0;
-}
+
 
 .fl {
   width: 10vw;
@@ -39,11 +35,12 @@ html, body {
 
 .fl-anime {
   font-size: 1em;
-  width: 25vw;
-  height: 75vh;
+  width: 60vw;
+  height: 100vh;
   transform: scale(1) translate(-50%, -50%);
-  top: 5vh;
-  left: 50vw;
+  top: 0vh;
+  left: 20vw;
+  overflow: scroll;
 } 
 
 .fl p {

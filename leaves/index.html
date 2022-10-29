@@ -5,16 +5,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="bg.css">
   <title>Leaves</title>
 </head>
 <body>
   <div class="main">
     
   </div>
+
   <div class="fl fl1">
-    <p>
-      IMAG1
-    </p>
+    <textarea name="txt-content" id="txt-content">
+    </textarea>
     <img src="" alt="">
   </div>
   <div class="fl fl2">
@@ -30,5 +31,28 @@
     <img src="" alt="">
   </div>
   <script src="index.js"></script>
+  <script src="./ckeditor/ckeditor5/build/ckeditor.js"></script>
+		<script>ClassicEditor
+				.create( document.querySelector( '#txt-content' ), {
+					
+					licenseKey: '',
+					
+					
+					
+				} )
+				.then( editor => {
+					window.editor = editor;
+			
+					
+					
+					
+				} )
+				.catch( error => {
+					console.error( 'Oops, something went wrong!' );
+					console.error( 'Please, report the following error on https://github.com/ckeditor/ckeditor5/issues with the build id and the error stack trace:' );
+					console.warn( 'Build id: i37z7crqu09n-us6rxs2ukm2c' );
+					console.error( error );
+				} );
+		</script>
 </body>
 </html>
