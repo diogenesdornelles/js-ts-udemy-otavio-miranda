@@ -5,9 +5,9 @@
 }
 
 html, body {
-  background-color: #4cb050;
+  background-color: #202026;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  color: #666663;
+  color: #ffffff;
   font-weight: 600;
 }
 
@@ -21,10 +21,10 @@ html, body {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 50% 50%;
-  background-color: #f9f9f9;
+  background-color: #343440;
   align-items: start;
   justify-items: center;
-  border-radius: 3px;
+  border-radius: 20px;
   box-shadow:
   2.8px 2.8px 2.2px rgba(0, 0, 0, 0.02),
   6.7px 6.7px 5.3px rgba(0, 0, 0, 0.028),
@@ -33,14 +33,14 @@ html, body {
   41.8px 41.8px 33.4px rgba(0, 0, 0, 0.05),
   100px 100px 80px rgba(0, 0, 0, 0.07);
   overflow: auto;
-  resize: both;
+  resize: both; 
 } 
 
 .container h1 {
   text-align: center;
   height: fit-content;
   font-size: 1.5em;
-  padding: 10px;
+  padding: 5px;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -51,14 +51,14 @@ html, body {
   flex-direction: column;
   height: 100%;
   width: 80%;
+  justify-content: center;
 }
 
 .validar form {
   display: flex;
   flex-direction: column;
-  height: 60%;
+  height: 80%;
   justify-content: space-evenly;
-
 }
 
 .result-validar {
@@ -69,6 +69,9 @@ html, body {
   height: 30px;
   width: 100%;
   border: 1px solid #666663;
+  text-align: center;
+  line-height: 30px;
+  background-color: #FFFFFF;
 }
 
 .gerar {
@@ -76,22 +79,26 @@ html, body {
   flex-direction: column;
   height: 100%;
   width: 80%;
+  justify-content: flex-start;
 }
 
 .gerar form {
   display: flex;
   flex-direction: column;
-  height: 40%;
+  height: 65%;
   justify-content: space-evenly;
 }
 
-input {
+.container input {
   height: 30px;
+  text-indent: 10px;
 }
 
-button {
+.container button {
   height: 30px;
-  cursor:pointer;
+  cursor: pointer;
+  font-family:Arial;
+  
 }
 
 .result-gerar {
@@ -102,4 +109,7 @@ button {
   height: 30px;
   width: 100%;
   border: 1px solid #666663;
+  text-align: center;
+  line-height: 30px;
+  background-color: #FFFFFF;
 }
