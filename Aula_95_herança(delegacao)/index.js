@@ -78,8 +78,8 @@ Produto.prototype.deActive = function(){
 }
 
 function Caneta(nome, descricao, preco, estoque,  marca, active, cor, ponta){
-  Produto.call(this, nome, descricao, preco, estoque,  marca, active); // call atrrs. incorpora totalmente ao objeto.
-  Object.setPrototypeOf(this, Produto.prototype); // call methods. mas ficam em outro __proto__
+  Produto.call(this, nome, descricao, preco, estoque,  marca, active); // call attrs. incorpora totalmente ao objeto.
+  
   Object.defineProperties(this, {
     cor: {
       value: cor, 
@@ -95,6 +95,8 @@ function Caneta(nome, descricao, preco, estoque,  marca, active, cor, ponta){
     },
   });
 }
+
+Object.setPrototypeOf(Caneta.prototype, Produto.prototype);
 
 const c1 = new Caneta('Caneta', 'Esferográfica', 2, 10, 'BIC', true, 'preta', 'fina');
 

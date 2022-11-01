@@ -4,6 +4,23 @@ const produto = { nome: 'caneca', preco: 1.8 };
 const outroProduto = { ...produto, material: 'porcalena' }; // copiar objeto por spread operator.
 const maisUmProduto = Object.assign({}, produto); // target e alvo.
 const ultimoProduto = { nome: produto.nome, preco: produto.preco };
+const ultimoProdutoDeVerdade = new Object(produto);
+const mainUmultimoProdutoDeVerdade = Object.create(null, {
+  nome: {
+    value: 'Bermuda',
+    writable: true,
+    configurable: false,
+    enumerable: true,
+  },
+  estoque: {
+    value: 10,
+    writable: true,
+    configurable: false,
+    enumerable: true,
+  },
+});
+
+console.log(mainUmultimoProdutoDeVerdade);
 
 console.log('############  MOSTRAR CHAVES ###############');
 console.log(Object.keys(produto));

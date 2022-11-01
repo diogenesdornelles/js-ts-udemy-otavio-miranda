@@ -12,7 +12,11 @@ console.log(person['nome']); // notação de colchetes.
 console.log(person[nome1]); // notação de colchetes permite acesso dinâmico.
 
 console.log('############ CONSTRUTOR ###############');
-const person2 = new Object(); // por construtor
+const person2 = new Object({ // por construtor
+  nome: 'Jojo',
+  sobrenome: 'Dornelles',
+}); 
+console.log(person2)
 
 console.log('############ INSERIR CHAVE ###############');
 person2.nome = 'Tato';

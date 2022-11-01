@@ -3,7 +3,7 @@ console.log('############ defineProperty ###############');
 function Produto(nome, preco, estoque){
   this.nome = nome; // 'this' assume variável pública.
   this.preco = preco;
-  // this.estoque = estoque; // não está definido no this.. então é privada.
+  
   Object.defineProperty(this, 'estoque', {
     enumerable: true, // exibe a chave em si.
     value: estoque,  // exibe valor da chave.

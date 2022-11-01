@@ -13,8 +13,6 @@ function CriaValidadorCPF() {
   this.buttonValidar = document.querySelector('#btn-submit-cpf');
   this.buttonLimpar = document.querySelector('#btn-limpar');
   this.pResultado = document.querySelector('.result-validar p');
-  this.cont = 0;
-  this.acc = 0;
   this.firstDigitoCheck = false;
   this.secondDigitoCheck = false;
 
@@ -28,7 +26,7 @@ function CriaValidadorCPF() {
   this.getCPF = () => {
     this.inputValidar = document.querySelector('#validar-cpf').value.replace(/\D+/g, '');
     if (typeof this.inputValidar !== 'undefined' && this.inputValidar.length === 11 && !this.isSequence()) {
-      this.validarCPFPrimeiroDigitoVerificador();
+      this.validarCPFDigitos();
     } else alert('Informe CPF corretamente.');
   }
 
@@ -37,27 +35,21 @@ function CriaValidadorCPF() {
   }
   
   this.verificar = function (posicao) {
-    console.log(posicao)
+    let acc = 0;
     for (let i = 0; i < posicao; i++) {
-      this.acc += Number(this.inputValidar[i]) * this.cont;
-      this.cont -= 1;
+      acc += Number(this.inputValidar[i]) * this.cont;
+      this.cont--;
     }
-    if (this.acc * 10 % 11  === Number(this.inputValidar[posicao])) {
+    if (acc * 10 % 11  === Number(this.inputValidar[posicao])) {
       return true;
     }
   }
   
-  this.validarCPFPrimeiroDigitoVerificador = () => {
+  this.validarCPFDigitos = () => {
     this.cont = 10;
-    this.acc = 0;
     const posicaoPrimeiroDigito = this.cont - 1;
     this.firstDigitoCheck = this.verificar(posicaoPrimeiroDigito)
-    this.validarCPFSegundoDigitoVerificador();
-  }
-
-  this.validarCPFSegundoDigitoVerificador = () => {
     this.cont = 11;
-    this.acc = 0;
     const posicaoSegundoDigito = this.cont - 1;
     this.secondDigitoCheck = this.verificar(posicaoSegundoDigito)
     this.checarDigitos();
@@ -88,7 +80,7 @@ function CriaValidadorCPF() {
   this.clearHtml= () => {
     this.pResultado.innerHTML = '';
     document.querySelector('#validar-cpf').value = '';
-    this.pResultado.style.backgroundColor = 'inherit';
+    this.pResultado.style.backgroundColor = 'white';
   }
 }
 
@@ -125,27 +117,26 @@ function CriaGeradorCPF() {
     this.buttonGerar.addEventListener('click', this.addVerificadoresCpf.bind(this));
   };
 
-  this.geraDigito = function (posicao){
-    for (let i = 0; i < posicao; i++) {
-      this.acc += this.listaNumerosCPF[i] * this.cont;
-      this.cont--;
-    }
-    if (((this.acc * 10) % 11) >= 10){
+  this.geraDigito = function (){
+    let soma = this.listaNumerosCPF.reduce((acc, val) => {
+        acc += val * this.cont;
+        this.cont--;
+        return acc;
+      }, 0);
+    if (((soma * 10) % 11) >= 10){
       return 0;
-    } else return (this.acc * 10) % 11;
+    } else return (soma * 10) % 11;
   }
 
   this.addVerificadoresCpf  = () => { 
     this.fillListaNumeros();
     this.cont = 10;
     this.acc = 0;
-    const posicaoPrimeiroDigito = this.cont - 1;
-    this.firstVerificador = this.geraDigito(posicaoPrimeiroDigito);
+    this.firstVerificador = this.geraDigito();
     this.listaNumerosCPF.push(this.firstVerificador);
     this.cont = 11;
     this.acc = 0;
-    const posicaoSegundoDigito = this.cont - 1;
-    this.secondVerificador = this.geraDigito(posicaoSegundoDigito);
+    this.secondVerificador = this.geraDigito();
     this.listaNumerosCPF.push(this.secondVerificador);
     this.formatResult();
   }
