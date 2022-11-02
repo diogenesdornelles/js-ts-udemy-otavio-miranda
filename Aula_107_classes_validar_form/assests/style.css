@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&family=Raleway:wght@300;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -59,6 +61,7 @@ html, body {
   background-color: #4d85c5;
   width: 100%;
   border-radius: 5px 5px 0 0;
+  font-size: 2.5vh;
 }
 
 .container .for-image {
@@ -71,7 +74,7 @@ html, body {
 }
 .container ul {
   list-style: none;
-  height: 5%;
+  height: 4%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -82,7 +85,7 @@ html, body {
 .container ul li{
   margin-top: 8px;
   text-indent: 5px;
-  font-size: 12px;
+  font-size: 1.5vh;
 }
 
 .container .form {
@@ -101,11 +104,14 @@ html, body {
 
 .container .form div input {
   border: none;
-  height: 25px;
+  height: 3vh;
   text-indent: 5px;
   color: #0a3363;
 }
 
+.container .form div label {
+  font-size: 1.8vh;
+}
 .container .form input:hover {
   border: 1px solid #4d85c5;
 }
@@ -118,7 +124,7 @@ html, body {
 
 .container .form button {
   border: none;
-  height: 35px;
+  height: 4vh;
   margin-top: 15px;
   background-color: #4d85c5;
   cursor: pointer;
