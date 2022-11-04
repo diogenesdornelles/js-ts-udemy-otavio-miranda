@@ -72,6 +72,7 @@ html, body {
 .container .for-image img {
   height: 100%;
 }
+
 .container ul {
   list-style: none;
   height: 4%;
@@ -199,8 +200,3 @@ html, body {
   margin-top: 4px;
   transition: all .8s ease-in-out;
 }
-
-
-
-
-
