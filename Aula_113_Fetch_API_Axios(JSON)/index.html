@@ -8,7 +8,24 @@
   <title>Document</title>
 </head>
 <body>
-  
+  <form action="/" method="get" class="form">
+    <input type="text" name="search" id="text-search" placeholder="Search contact">
+    <button id="btn-search">Search</button>
+    <button id="btn-load">Load</button>
+  </form>
+  <div class="table">
+    <ul class="row header">
+      <li class="cell item-header">Nome</li>
+      <li class="cell item-header">Email</li>
+      <li class="cell item-header">Salário</li>
+      <li class="cell item-header">Estado</li>
+      <li class="cell item-header">Empresa</li>
+      <li class="cell item-header">Idade</li>
+      <li class="cell item-header">Sexo</li>
+      <li class="cell item-header">CPF</li>
+    </ul>
+  </div>
 </body>
+<script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
 <script src="./assets/index.js"></script>
 </html>
